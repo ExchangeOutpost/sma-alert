@@ -10,13 +10,13 @@
                 "description": "Email address for notifications"
             },
             "fast_period": {
-                "type": "integer",
+                "type": ["integer", "string"],
                 "default": 10,
                 "minimum": 1,
                 "description": "Fast period for moving average calculation"
             },
             "slow_period": {
-                "type": "integer",
+                "type": ["integer", "string"],
                 "default": 20,
                 "minimum": 1,
                 "description": "Slow period for moving average calculation"
