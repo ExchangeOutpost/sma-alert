@@ -1,7 +1,28 @@
 {
-    "function_name": "Typescript Function Template",
-    "description": "A template for creating Typescript functions",
-    "financial_data_keys": [],
-    "call_arguments_schema": {},
-    "enforce_schemas": false
+    "function_name": "SMA Alertq",
+    "description": "Sends an alert when the Simple Moving Average (SMA) of a financial instrument crosses a specified threshold.",
+    "financial_data_keys": ["pegged_data"],
+    "call_arguments_schema": {
+        "type": "object",
+        "properties": {
+            "email": {
+                "type": "string",
+                "description": "Email address for notifications"
+            },
+            "fast_period": {
+                "type": "integer",
+                "default": 10,
+                "minimum": 1,
+                "description": "Fast period for moving average calculation"
+            },
+            "slow_period": {
+                "type": "integer",
+                "default": 20,
+                "minimum": 1,
+                "description": "Slow period for moving average calculation"
+            }
+        },
+        "required": ["email"]
+    },
+    "enforce_schemas": true
 }
